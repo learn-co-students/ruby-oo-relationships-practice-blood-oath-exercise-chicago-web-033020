@@ -2,10 +2,17 @@ class BloodOath
   attr_reader :cult, :follower, :date
   @@all = []
   def initialize(follower, cult)
-    @follower = follower
-    @cult = cult
-    @date = Time.now
-    self.class.all << self
+    # binding.pry
+    if self.class.all.any?{|o|o.follower == follower && o.cult == cult}
+      puts "Sorry, can't join the same cult again!"    
+    elsif follower.age < cult.minimum_age
+      puts "You are too young to join #{cult.name}."
+      else
+        @follower = follower
+        @cult = cult
+        @date = Time.now
+        self.class.all << self
+    end
   end
 
   def initiation_date

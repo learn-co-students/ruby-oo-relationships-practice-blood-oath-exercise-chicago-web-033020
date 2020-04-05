@@ -1,12 +1,12 @@
 class Cult
-  attr_accessor :name, :location, :founding_year, :slogan, :followers
+  attr_accessor :name, :location, :founding_year, :slogan, :minimum_age
   @@all = []
-  def initialize(name, location, founding_year, slogan)
+  def initialize(name, location, founding_year, slogan, minimum_age)
     @name = name
     @location = location
     @founding_year = founding_year
     @slogan = slogan
-    # @followers = []
+    @minimum_age = minimum_age
     self.class.all << self
   end
 
@@ -15,16 +15,17 @@ class Cult
   end
 
   def cult_population
-    self.followers.size
+    # self.followers.size
+    followers.size
   end
 
   def average_age
-    a = self.followers.map{|f| f.age}
+    a = followers.map{|f| f.age}
     a.sum.to_f/self.cult_population
   end
 
   def my_followers_mottos
-    self.followers.each do |f|
+    followers.each do |f|
       puts "#{f.life_motto}"
     end
   end
