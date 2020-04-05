@@ -93,7 +93,7 @@ Y * `Follower.of_a_certain_age`
 
 Y * `BloodOath#initiation_date`
   * returns a `String` that is the initiation date of this blood oath in the format _YYYY-MM-DD_.
-* `BloodOath.all`
+Y * `BloodOath.all`
   * returns an `Array` of all the blood oaths
 
 ---

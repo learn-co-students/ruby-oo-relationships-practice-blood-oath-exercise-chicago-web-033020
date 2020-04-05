@@ -7,8 +7,8 @@ scientology = Cult.new("Scientology", "Chicago", 1950, "To be a scientologist is
 pizza_monsters = Cult.new("Pizza Monsters", "Chicago", 1999, "PIIIZZZZZAAA cult")
 big_cat_rescue = Cult.new("Big Cat Rescue", "Florida", 2019, "Hey all of you cool cats and kittens")
 
-sam = Follower.new("Sam", 28)
-claire = Follower.new("Claire", 26)
+sam = Follower.new("Sam", 100)
+claire = Follower.new("Claire", 55)
 
 scientology.recruit_follower(sam)
 scientology.recruit_follower(claire)
