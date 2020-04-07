@@ -106,27 +106,27 @@ Now we want to build out some useful features so `Cult`s and `Follower`s and get
 
 **`Cult`**
 
-* `Cult#average_age`
+*🥮 `Cult#average_age`
   * returns a `Float` that is the average age of this cult's followers
-* `Cult#my_followers_mottos`
+*🥮 `Cult#my_followers_mottos`
   * prints out all of the mottos for this cult's followers
-* `Cult.least_popular`
+*🥮 `Cult.least_popular`
   * returns the `Cult` instance who has the least number of followers :(
-* `Cult.most_common_location`
+*🥮`Cult.most_common_location`
   * returns a `String` that is the location with the most cults
 
 **`Follower`**
 
-* `Follower#my_cults_slogans`
+*🥮 `Follower#my_cults_slogans`
   * prints out all of the slogans for this follower's cults
-* `Follower.most_active`
+*🥮 `Follower.most_active`
   * returns the `Follower` instance who has joined the most cults
 * `Follower.top_ten`
   * returns an `Array` of followers; they are the ten most active followers
 
 **`BloodOath`**
 
-* `BloodOath.first_oath`
+*🥮 `BloodOath.first_oath`
   * returns the `Follower` instance for the follower that made the very first blood oath
 
 ---

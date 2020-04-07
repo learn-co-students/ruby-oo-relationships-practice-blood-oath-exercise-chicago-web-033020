@@ -20,6 +20,9 @@ vampires.recruit_follower(buffy)
 vampires.recruit_follower(dracula)
 werewolves.recruit_follower(jacob)
 
+buffy_bloodoath= BloodOath.new(buffy, vampires)
+jacob_bloodoath= BloodOath.new(jacob, werewolves)
+
 binding.pry
 
 puts "Mwahahaha!" # just in case pry is buggy and exits
