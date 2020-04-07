@@ -29,18 +29,26 @@ class Follower
   end
 
   def self.top_ten
-    # get an array of followers from all the bloodoath made
-    # arr = BloodOath.all.map{|b| b.follower}
-    arr = Follower.all_followers #????
-    # group them by follower
-    a = arr.group_by{|c|c}
-    # turn into an array
-    b = a.to_a
-    # sort by size (- sign is for reverse order) of the array in index 1 which is an array
-    # containing the same follower occurrence
-    c = b.sort_by{|y| -y[1].size}
-    # extrac top 10 from index 0
-    d = c[0..9].map{|e|e[0]}
+    # # get an array of followers from all the bloodoath made
+    # # arr = BloodOath.all.map{|b| b.follower}
+    # arr = Follower.all_followers #????
+    # # group them by follower
+    # a = arr.group_by{|c|c}
+    # # turn into an array
+    # b = a.to_a
+    # # sort by size (- sign is for reverse order) of the array in index 1 which is an array
+    # # containing the same follower occurrence
+    # c = b.sort_by{|y| -y[1].size}
+    # # extrac top 10 from index 0
+    # d = c[0..9].map{|e|e[0]}
+
+    self.all.max(10) do|fl_a, fl_b|
+      fl_a.follower_bloodoath.length <=> fl_b.follower_bloodoath.length
+    end
+  end
+
+  def follower_bloodoath
+    BloodOath.all.select {|bo| bo.follower == self}
   end
 
   def fellow_cult_members
