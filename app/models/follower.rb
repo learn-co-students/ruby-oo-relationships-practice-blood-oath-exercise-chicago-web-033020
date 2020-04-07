@@ -43,14 +43,10 @@ class Follower
     my_cult = BloodOath.all.select{|oaths| oaths.follower == self}
     # create an array of only the cults
     all_my_cult = my_cult.map{|myoath| myoath.cult}
-    f_oaths = []
-    # get all oaths that has the same cult(s)
-    all_my_cult.each do |all_c| 
-      f_oaths << BloodOath.all.select{|c| c.cult == all_c }
-    end
-    # remove self from the list because method only wants the 
-    # rest of followers
-    fellow = f_oaths.flatten.map{|f|f.follower}.uniq.select{|felw| felw != self}
+    f_oaths = all_my_cult.map do |all_c|
+      all_c.all_bo_cult.collect {|cbo|cbo.follower}
+    end 
+    fellow = f_oaths.flatten.uniq.select{|felw| felw != self}
   end
 
   def self.all

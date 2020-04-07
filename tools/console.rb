@@ -33,13 +33,13 @@ oath9 = follower4.join_cult(hiscult)
 p mycult.cult_population
 p hiscult.cult_population
 p hercult.cult_population
-p mycult.average_age
-p mycult.my_followers_mottos
+# p mycult.average_age
+# p mycult.my_followers_mottos
 # p Cult.least_popular
 # p Cult.most_common_location
-p Follower.most_active
-p Follower.top_ten
-# p follower1.fellow_cult_members
+# p Follower.most_active
+# p Follower.top_ten
+p follower1.fellow_cult_members
 # p BloodOath.all
 # Insert code here to run before hitting the binding.pry
 # This is a convenient place to define variables and/or set up new object instances,

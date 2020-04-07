@@ -46,6 +46,10 @@ class Cult
     a.max_by{|city| a.count(city)}
   end
 
+  def all_bo_cult
+    BloodOath.all.select {|bo| bo.cult == self}
+  end
+  
   def self.all
     @@all
   end
