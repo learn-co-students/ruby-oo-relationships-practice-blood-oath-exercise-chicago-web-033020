@@ -37,7 +37,7 @@ p mycult.average_age
 p mycult.my_followers_mottos
 # p Cult.least_popular
 # p Cult.most_common_location
-# p Follower.most_active
+p Follower.most_active
 p Follower.top_ten
 # p follower1.fellow_cult_members
 # p BloodOath.all

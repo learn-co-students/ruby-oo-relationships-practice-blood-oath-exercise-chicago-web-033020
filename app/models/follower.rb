@@ -17,31 +17,18 @@ class Follower
   end
 
   def self.most_active
-    # create an array of follower instances 
-    # then find the one occurs the most
-    a = Follower.all_followers #????
-    # a = BloodOath.all.map{|b| b.follower}  
-    a.max_by{|follw| a.count(follw)}
-  end
-
-  def self.all_followers
-    BloodOath.all.map{|b| b.follower} 
+    # self.all retuns all the followers
+    # .max compare each occurence in the array
+    # each array occurence is an array containing the oaths taken by that one
+    # folloer. By comparing the array length we know who has the most oaths
+    self.all.max do|fl_a, fl_b|
+      fl_a.follower_bloodoath.length <=> fl_b.follower_bloodoath.length
+    end
   end
 
   def self.top_ten
-    # # get an array of followers from all the bloodoath made
-    # # arr = BloodOath.all.map{|b| b.follower}
-    # arr = Follower.all_followers #????
-    # # group them by follower
-    # a = arr.group_by{|c|c}
-    # # turn into an array
-    # b = a.to_a
-    # # sort by size (- sign is for reverse order) of the array in index 1 which is an array
-    # # containing the same follower occurrence
-    # c = b.sort_by{|y| -y[1].size}
-    # # extrac top 10 from index 0
-    # d = c[0..9].map{|e|e[0]}
-
+    # max(10) will return the top 10 while max just return the top 1
+    # max(?) return an array while max only return the intance
     self.all.max(10) do|fl_a, fl_b|
       fl_a.follower_bloodoath.length <=> fl_b.follower_bloodoath.length
     end
